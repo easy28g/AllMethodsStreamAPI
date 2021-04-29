@@ -1,6 +1,7 @@
 package megacom.models;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Sellers {
 
@@ -40,6 +41,21 @@ public class Sellers {
 
     public void setSellerProducts(ArrayList<Products> sellerProducts) {
         this.sellerProducts = sellerProducts;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sellers sellers = (Sellers) o;
+        return Objects.equals(sellerName, sellers.sellerName) &&
+                Objects.equals(sellerLogin, sellers.sellerLogin) &&
+                Objects.equals(sellerProducts, sellers.sellerProducts);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sellerName, sellerLogin, sellerProducts);
     }
 
     @Override

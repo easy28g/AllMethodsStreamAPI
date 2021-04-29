@@ -1,7 +1,6 @@
 package megacom;
 
-import megacom.service.StreamAPImethods.MapAPImethod;
-import megacom.service.StreamAPImethods.SkipLimitStreamAPImethods;
+import megacom.service.StreamAPImethods.SkipLimitDistinctPeekSorted;
 
 public class Main {
 
@@ -12,7 +11,7 @@ public class Main {
 //        mapAPImethod.mapAPI();
 
         System.out.println("Stream API: skip(), limit(), ");
-        SkipLimitStreamAPImethods skipLimitStreamAPImethods = new SkipLimitStreamAPImethods();
+        SkipLimitDistinctPeekSorted skipLimitStreamAPImethods = new SkipLimitDistinctPeekSorted();
         skipLimitStreamAPImethods.skipLimitStreamAPImethods();
     }
 }
