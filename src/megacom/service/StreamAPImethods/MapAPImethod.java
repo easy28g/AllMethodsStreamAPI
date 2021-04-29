@@ -45,9 +45,9 @@ public class MapAPImethod {
                 .flatMap(sellersStream -> sellersStream.map(sellers -> sellers.getSellerProducts()))
                 .flatMap(products -> products.stream().map(products1 -> products1.getProductPrice()))
                 .collect(Collectors.toList());
-        System.out.println("*********************************************");
-        productsList.forEach(products -> System.out.println(products));
-        System.out.println("*********************************************");
+        System.out.println("***************************************************************************************");
+        productsList.forEach(products -> products.forEach(products1 -> System.out.println(products1)));
+        System.out.println("***************************************************************************************");
 
         // Получаем список продуктов дороже 110000
         List<Products> productsPriceListMore110k2 = fillAllData.getDataFromSumAndGum().stream()
@@ -71,6 +71,17 @@ public class MapAPImethod {
                         .map(products -> products.getProductPrice())
                 .collect(Collectors.toList());
 
+        // Получаем колличество продуктов дороже 100к
+        float countProductsPriceListMore100k = fillAllData.getDataFromSumAndGum().stream()
+                .map(placeOfSale -> placeOfSale.getSellers().stream())
+                .flatMap(sellersStream -> sellersStream
+                        .map(sellers -> sellers.getSellerProducts()))
+                .flatMap(products -> products.stream()
+                        .filter(products1 -> products1.getProductPrice()>100000))
+                .map(products -> products.getProductPrice())
+                .count();
+
+
 
         System.out.println();
         System.out.println("Получение списка продуктов");
@@ -87,6 +98,9 @@ public class MapAPImethod {
 
         System.out.println("Получение только скиска цен продуктов дороже 100к");
         System.out.println(productsPriceListMore100k);
+        System.out.println();
 
+        System.out.println("Получаем колличество продуктов дороже 100к");
+        System.out.println(countProductsPriceListMore100k);
     }
 }
