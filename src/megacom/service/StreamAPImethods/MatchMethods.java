@@ -52,14 +52,24 @@ public class MatchMethods {
 
 
         System.out.println("max()");
-        Optional<Products> productsList = fillAllData.getDataFromSumAndGum().stream()
+        Optional<Products> productsListMax = fillAllData.getDataFromSumAndGum().stream()
                 .map(placeOfSale -> placeOfSale.getSellers().stream())
                 .flatMap(sellersStream -> sellersStream.map(sellers -> sellers.getSellerProducts()))
                 .flatMap(products -> products.stream())
                 .max(Comparator.comparingDouble(Products::getProductPrice));
 
-        System.out.println(productsList);
+        System.out.println(productsListMax);
         System.out.println("*************************************************");
-;
+
+        System.out.println("min()");
+        Optional<Products> productsListMin = fillAllData.getDataFromSumAndGum().stream()
+                .map(placeOfSale -> placeOfSale.getSellers().stream())
+                .flatMap(sellersStream -> sellersStream.map(sellers -> sellers.getSellerProducts()))
+                .flatMap(products -> products.stream())
+                .min(Comparator.comparingDouble(Products::getProductPrice));
+
+        System.out.println(productsListMin);
+        System.out.println("*************************************************");
+
     }
 }
