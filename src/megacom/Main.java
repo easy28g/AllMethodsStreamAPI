@@ -1,5 +1,6 @@
 package megacom;
 
+import megacom.service.StreamAPImethods.MapAPImethod;
 import megacom.service.StreamAPImethods.MatchMethods;
 import megacom.service.StreamAPImethods.SkipLimitDistinctPeekSorted;
 
