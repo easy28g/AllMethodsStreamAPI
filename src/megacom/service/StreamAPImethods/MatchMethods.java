@@ -22,6 +22,7 @@ public class MatchMethods {
         System.out.println(anyMatchMethods);
         System.out.println("*************************************************");
 
+
         System.out.print("noneMatch() : Цена товара дешевлее 1 == ");
         boolean noneMatchMethods = fillAllData.getDataFromSumAndGum().stream()
                 .map(placeOfSale -> placeOfSale.getSellers().stream())
@@ -29,6 +30,7 @@ public class MatchMethods {
                 .allMatch(products -> products.stream().noneMatch(products1 -> products1.getProductPrice()<1));
         System.out.println(noneMatchMethods);
         System.out.println("*************************************************");
+
 
         System.out.print("allMatch() : Цена товара дороже 100 == ");
         boolean allMatchMethods = fillAllData.getDataFromSumAndGum().stream()
@@ -38,11 +40,13 @@ public class MatchMethods {
         System.out.println(allMatchMethods);
         System.out.println("*************************************************");
 
+
         System.out.println("findFirst()");
         Optional<PlaceOfSale> optionalPlaceOfSales = fillAllData.getDataFromSumAndGum().stream()
                 .findFirst();
         System.out.println(optionalPlaceOfSales);
         System.out.println("*************************************************");
+
 
         System.out.println("findAny()");
         PlaceOfSale optionalPlaceOfSalesFindAny = fillAllData.getDataFromSumAndGum().stream()
@@ -61,6 +65,7 @@ public class MatchMethods {
         System.out.println(productsListMax);
         System.out.println("*************************************************");
 
+
         System.out.println("min()");
         Optional<Products> productsListMin = fillAllData.getDataFromSumAndGum().stream()
                 .map(placeOfSale -> placeOfSale.getSellers().stream())
@@ -70,6 +75,7 @@ public class MatchMethods {
 
         System.out.println(productsListMin);
         System.out.println("*************************************************");
+
 
     }
 }

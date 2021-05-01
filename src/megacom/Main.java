@@ -2,6 +2,7 @@ package megacom;
 
 import megacom.service.StreamAPImethods.MapAPImethod;
 import megacom.service.StreamAPImethods.MatchMethods;
+import megacom.service.StreamAPImethods.ReduceOptionalAPImethod;
 import megacom.service.StreamAPImethods.SkipLimitDistinctPeekSorted;
 
 public class Main {
@@ -16,8 +17,11 @@ public class Main {
 //        SkipLimitDistinctPeekSorted skipLimitStreamAPImethods = new SkipLimitDistinctPeekSorted();
 //        skipLimitStreamAPImethods.skipLimitStreamAPImethods();
 
-        MatchMethods matchMethods = new MatchMethods();
-        matchMethods.matchMetods();
+//        MatchMethods matchMethods = new MatchMethods();
+//        matchMethods.matchMetods();
+
+        ReduceOptionalAPImethod reduceOptionalAPImethod = new ReduceOptionalAPImethod();
+        reduceOptionalAPImethod.reduceOptional();
 
     }
 }
