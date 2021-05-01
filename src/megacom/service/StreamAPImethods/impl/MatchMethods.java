@@ -1,16 +1,17 @@
-package megacom.service.StreamAPImethods;
+package megacom.service.StreamAPImethods.impl;
 
 import megacom.models.PlaceOfSale;
 import megacom.models.Products;
 import megacom.service.FillData.FillAllData;
 import megacom.service.FillData.impl.FillSumAndGum;
+import megacom.service.StreamAPImethods.StreamAPImethods;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class MatchMethods {
+public class MatchMethods implements StreamAPImethods {
 
-    public void matchMetods(){
+    private void matchMetods(){
 
         FillAllData fillAllData = new FillSumAndGum();
 
@@ -77,5 +78,10 @@ public class MatchMethods {
         System.out.println("*************************************************");
 
 
+    }
+
+    @Override
+    public void streamAPI() {
+        matchMetods();
     }
 }

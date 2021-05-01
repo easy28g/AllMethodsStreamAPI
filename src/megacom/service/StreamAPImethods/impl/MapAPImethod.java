@@ -1,18 +1,19 @@
-package megacom.service.StreamAPImethods;
+package megacom.service.StreamAPImethods.impl;
 
 import megacom.models.Products;
 import megacom.models.Sellers;
 import megacom.service.FillData.FillAllData;
 import megacom.service.FillData.impl.FillSumAndGum;
+import megacom.service.StreamAPImethods.StreamAPImethods;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class MapAPImethod {
+public class MapAPImethod implements StreamAPImethods {
 
-    public void mapAPI(){
+    private void mapAPI(){
         FillAllData fillAllData = new FillSumAndGum();
         fillAllData.getDataFromSumAndGum();
 /*
@@ -102,5 +103,10 @@ public class MapAPImethod {
 
         System.out.println("Получаем колличество продуктов дороже 100к");
         System.out.println(countProductsPriceListMore100k);
+    }
+
+    @Override
+    public void streamAPI() {
+        mapAPI();
     }
 }

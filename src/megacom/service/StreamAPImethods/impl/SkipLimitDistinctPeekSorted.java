@@ -1,17 +1,18 @@
-package megacom.service.StreamAPImethods;
+package megacom.service.StreamAPImethods.impl;
 
 import megacom.models.Products;
 import megacom.service.FillData.FillAllData;
 import megacom.service.FillData.impl.FillSumAndGum;
+import megacom.service.StreamAPImethods.StreamAPImethods;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SkipLimitDistinctPeekSorted {
+public class SkipLimitDistinctPeekSorted implements StreamAPImethods {
 
-    public void skipLimitStreamAPImethods(){
+    private void skipLimitStreamAPImethods(){
 
         FillAllData fillAllData = new FillSumAndGum();
 
@@ -76,6 +77,11 @@ public class SkipLimitDistinctPeekSorted {
         //sortProduct.forEach(products -> products.forEach(System.out::println));
 
         sortProduct.forEach(System.out::println);
+    }
+
+    @Override
+    public void streamAPI() {
+        skipLimitStreamAPImethods();
     }
 }
 
